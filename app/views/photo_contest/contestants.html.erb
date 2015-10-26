@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "page-header">
+<center><h1>Photo Contestants</h1>
+</div>
+
+<div class = "container">
+<div class="row">
+  <% @images.each do |image| %>
+
+      <div class="col-md-4 portfolio-item">
+            <%= link_to image_tag(image.image_url(:display)), image%>
+          </a>
+          <h3>
+            <%=link_to image.title, image%></a>
+          </h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+      </div>
+
+  <% end %>
+  </div>
+</div>

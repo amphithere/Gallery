@@ -1,0 +1,25 @@
+<div class = "page-header">
+<center><h1><%= @user.email%>'s Profile</h1>
+</div>
+<div class = "container">
+<div class="row">
+  <% @images.each do |image| %>
+
+      <div class="col-md-4 portfolio-item">
+            <%= link_to image_tag(image.image_url(:display)), image%>
+          </a>
+          <h3>
+            <%=link_to image.title, image%></a>
+          </h3>
+          <p>Description</p>
+          <%- if current_user.id == image.user_id-%>
+          <td><%= button_to 'Edit', edit_image_path(image), class: :'btn btn-default', method: :get %></td>
+          <td><%= button_to 'Destroy', image, class: :'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%-end-%>
+      </div>
+
+  <% end %>
+  </div>
+
+<%= link_to 'Back', images_path%>
+</div>

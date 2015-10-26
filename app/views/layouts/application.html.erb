@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Anthropology Gallery</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <%=render "shared/navigationbar" %>
+</head>
+<body>
+
+<%= yield %>
+<!-- footer -->
+<footer>
+  <hr />
+  <div class="container">
+    <p class="text-right">Copyright &copy; School of Anthropology 2015</p>
+  </div>
+</footer>
+<!-- /footer -->
+</body>
+</html>

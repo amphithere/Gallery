@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<div class = "container">
+<center>
+<p>
+  <strong>Title:</strong>
+  <%= @image.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <div id = 'Image'>
+  <%= image_tag @image.image %>
+</div>
+</p>
+
+<p>
+  <strong> Photographer: </strong>
+  <%= @image.user.email %>
+<p>
+<%- if user_signed_in? and current_user.id == @image.user_id -%>
+  <%= button_to 'Edit', edit_image_path(@image), class: :'btn btn-default', method: :get %>
+  <%= button_to 'Destroy', @image, class: :'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<%-end-%>
+<br>
+<br>
+<%= button_to "Back", images_path, :class => 'btn btn-default', :method => :get  %>
+</div>

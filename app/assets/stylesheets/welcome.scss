@@ -1,0 +1,100 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar-brand {
+  padding: 6px 10px !important;
+}
+
+
+a {
+  &:link {
+    color: green;
+  }
+  &:visited {
+    color:#32021F;
+  }
+  &:hover {
+    color: #8F6BB2 !important;
+    background-color: transparent;
+  }
+
+}
+
+
+/* general styles */
+html,body {
+  height: 100%;
+  width: 100%;
+  padding-top: 1.5em !important;
+}
+
+/* padded section */
+.pad-section {
+  padding: 50px 0;
+}
+.pad-section img {
+  width: 100%;
+}
+
+/* vertical-centered text */
+.text-vcenter {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #AAA9A9;
+}
+.text-vcenter h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+  color: #AAA9A9;
+  margin: 0;
+  padding: 0;
+}
+
+/* additional sections */
+#home {
+  background: url(http://anthropology.arizona.edu/sites/anthropology.arizona.edu/files/2011-006-01.jpg) no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#about {
+}
+
+#information {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/5/54/Colorful_Parrots_Couple.jpg)
+  no-repeat center center fixed;
+  display: table;
+  height: 800px;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#information .panel {
+  opacity: 0.85;
+}
+
+#google_map {
+  height: 500px;
+}
+
+footer {
+  padding: 20px 0;
+}
+footer .glyphicon {
+  color: #333333;
+  font-size: 60px;
+}
+footer .glyphicon:hover {
+  color: #306d9f;
+}
