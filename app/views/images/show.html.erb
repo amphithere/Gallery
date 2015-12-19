@@ -1,13 +1,10 @@
-<p id="notice"><%= notice %></p>
 <div class = "container">
 <center>
-<p>
-  <strong>Title:</strong>
-  <%= @image.title %>
-</p>
+<div class = "page-header">
+  <h1><%= @image.title %></h1>
+</div>
 
 <p>
-  <strong>Image:</strong>
   <div id = 'Image'>
   <%= image_tag @image.image %>
 </div>
@@ -15,13 +12,15 @@
 
 <p>
   <strong> Photographer: </strong>
-  <%= @image.user.email %>
+  <%= link_to @image.user.email, profile_path(@image.user.id)%>
 <p>
-<%- if user_signed_in? and current_user.id == @image.user_id -%>
-  <%= button_to 'Edit', edit_image_path(@image), class: :'btn btn-default', method: :get %>
-  <%= button_to 'Destroy', @image, class: :'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<%-end-%>
+<% if user_signed_in? %>
+  <%- if current_user.id == @image.user_id or current_user.admin?-%>
+    <%= button_to 'Edit', edit_image_path(@image), class: :'btn btn-default', method: :get %>
+    <%= button_to 'Destroy', @image, class: :'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%- else -%>
+  <%- end -%>
+<%end%>
 <br>
 <br>
 <%= button_to "Back", images_path, :class => 'btn btn-default', :method => :get  %>

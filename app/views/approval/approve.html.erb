@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "page-header">
+<center><h1>Approve Images</h1>
+</div>
+<div class = "container">
+<div class="row">
+  <% @images.each do |image| %>
+
+      <div class="col-md-4 portfolio-item">
+            <%= link_to image_tag(image.image_url(:display)), image%>
+          </a>
+          <h3>
+            <%=link_to image.title, image%></a>
+          </h3>
+          <strong>
+            Photographer: <%= link_to image.user.email, profile_path(image.user.id)%>
+          </strong>
+          <p>Description</p>
+          <%= button_to "Approve", approved_path(image.id), method: :get %>
+          <%= button_to 'Destroy', image, class: :'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+
+  <% end %>
+  </div>
+</div>

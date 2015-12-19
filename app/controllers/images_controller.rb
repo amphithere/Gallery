@@ -4,12 +4,16 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    @images = Image.where(approve: true)
   end
 
   # GET /images/1
   # GET /images/1.json
   def show
+    if @image.approve?
+    else
+      redirect_to root_path
+    end
   end
 
   # GET /images/new
@@ -24,8 +28,9 @@ class ImagesController < ApplicationController
   # GET /images/1/edit
   def edit
     if user_signed_in?
-      if current_user.id != @image.user_id
+      if current_user.id != @image.user_id and !current_user.admin?
         render :file => "#{Rails.root}/public/404.html", :status => 404
+      else
       end
     else
       redirect_to "/users/sign_in"

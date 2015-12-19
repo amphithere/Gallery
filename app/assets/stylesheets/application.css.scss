@@ -17,13 +17,17 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-body {
+html {
   padding-top: 3em;
 }
-
 a {
   &:hover {
       text-decoration: none;
   }
+}
+
+.alert {
+  margin-bottom: 0px !important;
+  padding: 20px !important;
+  margin-top: 15px;
 }

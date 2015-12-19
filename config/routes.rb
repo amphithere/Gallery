@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
+  get 'approved/:id' => 'approval#approved', as: :approved
   get 'welcome/home'
-
-  get 'awards/awards'
-
   get 'contestants' => 'photo_contest#contestants', as: :photo_contest
   get 'awards' => 'awards#awards', as: :awards
   get 'profile/:id' => 'profile#show', as: :profile
-
+  get 'approval' => 'approval#approve', as: :approve
   resources :images
   devise_for :users
 
