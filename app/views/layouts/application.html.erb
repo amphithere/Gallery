@@ -19,10 +19,7 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
-
-  <%=render "shared/navigationbar" %>
-</head>
-<body>
+  <%=render "shared/navigationbartest" %>
   <% if notice %>
     <p class="alert alert-success">
       <%= notice %>
@@ -34,7 +31,12 @@
     </p>
   <% end %>
 
+</head>
+<!-- <div class = 'container'> -->
+<body>
 <%= yield %>
+</body>
+<!-- </div> -->
 <!-- footer -->
 <footer>
   <hr />
@@ -43,5 +45,5 @@
   </div>
 </footer>
 <!-- /footer -->
-</body>
+
 </html>

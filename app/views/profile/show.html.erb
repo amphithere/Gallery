@@ -1,5 +1,12 @@
+<div class = 'container'>
 <div class = "page-header">
-<center><h1><%= @user.email%>'s Profile</h1>
+<center>
+  <h1><%= @user.email%>'s Profile</h1>
+  <% if current_user == @user%>
+    <%= button_to 'Edit Profile', edit_user_registration_path, method: :get, class: :'btn btn-info' %>
+  <%end%>
+  <hr>
+
 </div>
 <div class = "container">
 <div class="row">
@@ -22,4 +29,5 @@
       <%end%>
   </div>
 <%= link_to 'Back', images_path%>
+</div>
 </div>

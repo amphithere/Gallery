@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hfmo6t1ca
+  api_key: '744788553412457'
+  api_secret: KDlrBaHaEfhmAwL7zV7HFKMVcXc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hfmo6t1ca
+  api_key: '744788553412457'
+  api_secret: KDlrBaHaEfhmAwL7zV7HFKMVcXc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hfmo6t1ca
+  api_key: '744788553412457'
+  api_secret: KDlrBaHaEfhmAwL7zV7HFKMVcXc
+  enhance_image_tag: true
+  static_image_support: false
