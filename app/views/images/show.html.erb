@@ -16,8 +16,10 @@
 <p>
 <% if user_signed_in? %>
   <%- if current_user.id == @image.user_id or current_user.admin?-%>
-    <%= button_to 'Edit', edit_image_path(@image), class: :'btn btn-default', method: :get %>
-    <%= button_to 'Destroy', @image, class: :'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class = "btn-group">
+      <%= button_to 'Edit', edit_image_path(@image), class: :'btn btn-default', method: :get %>
+      <%= button_to 'Destroy', @image, class: :'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
   <%- else -%>
   <%- end -%>
 <%end%>
